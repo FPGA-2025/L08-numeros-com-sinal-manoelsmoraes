@@ -9,4 +9,22 @@ module numeros_com_sinal(
 
 //insira seu codigo aqui
 
+always @(*) begin
+    // Inicializa a saída como zero para segurança
+    saida = 8'd0;
+
+    if (codigo == 2'd0) begin
+        // Soma entre dois valores com sinal
+        saida = entrada_signed_1 + entrada_signed_2;
+    end else if (codigo == 2'd1) begin
+        // Soma entre dois valores sem sinal
+        saida = entrada_unsigned_1 + entrada_unsigned_2;
+    end else if (codigo == 2'd2) begin
+        // Soma entre unsigned (8 bits) e signed (8 bits)
+        saida = entrada_unsigned_1 + entrada_signed_1;
+    end else if (codigo == 2'd3) begin
+        // Soma entre unsigned (8 bits) e signed (4 bits)
+        saida = entrada_unsigned_1 + entrada_signed_2;
+    end
+
 endmodule
