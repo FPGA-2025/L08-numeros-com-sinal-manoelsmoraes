@@ -26,5 +26,6 @@ always @(*) begin
         // Soma entre unsigned (8 bits) e signed (4 bits)
         saida = entrada_unsigned_1 + entrada_signed_2;
     end
+ end
 
 endmodule
